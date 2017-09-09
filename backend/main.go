@@ -16,7 +16,7 @@ func viewHandler(w http.ResponseWriter, r *http.Request) {
 
 func main() {
 	// serve static css and js files
-	http.Handle("/static/", http.StripPrefix("/static/", http.FileServer(http.Dir("static"))))
+	http.Handle("/static/", http.StripPrefix("/static/", http.FileServer(http.Dir("../static"))))
 	http.HandleFunc("/", viewHandler)
 	http.ListenAndServe(PORT, nil)
 }
